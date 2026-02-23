@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHub • Healthy</title>
+  <link rel="stylesheet" href="healthy.css" />
+</head>
+<body>
+
+  <!-- ✅ NAVBAR (same as Veg structure) -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <!-- Brand -->
+      <a class="brand" href="../home-page/index.html" aria-label="FoodHub Home">
+        <span class="brand-text">FoodHub</span>
+      </a>
+
+      <!-- Location -->
+      <button class="loc" id="locBtn" title="Location">
+        <span class="loc-dot"></span>
+        <span class="loc-text">
+          <span class="loc-title">Deliver to</span>
+          <span class="loc-place" id="locPlace">Muradnagar</span>
+        </span>
+        <span class="loc-caret">▾</span>
+      </button>
+
+      <!-- Search -->
+      <div class="search bigSearch">
+        <span class="sIcon">⌕</span>
+        <input id="search" type="text" placeholder="Search for restaurants or dishes" />
+      </div>
+
+      <!-- Right Nav -->
+      <nav class="rightNav" aria-label="Primary">
+        <a class="navItem" href="../veg-part/veg.html">Veg</a>
+        <a class="navItem" href="../nonveg-part/nonveg.html">Non-Veg</a>
+        <a class="navItem active" href="healthy.html">Healthy</a>
+
+        <a class="navItem cartBtn" href="../cart-part/cart.html">
+          Cart <span class="cartCount" id="cartCount">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-left">
+        <h1>Healthy Restaurants</h1>
+        <p>Salads, bowls, keto, high-protein meals and more.</p>
+      </div>
+
+      <div class="chips" role="group" aria-label="Quick filters">
+        <button class="chip active" data-chip="all">All</button>
+        <button class="chip" data-chip="highprotein">High Protein</button>
+        <button class="chip" data-chip="keto">Keto</button>
+        <button class="chip" data-chip="under30">30 mins</button>
+        <button class="chip" data-chip="under200">Under ₹200</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap layout">
+    <section class="left">
+      <div class="section-top">
+        <h2 class="h2">Restaurants</h2>
+        <div class="sortWrap">
+          <label for="sort" class="sortLabel">Sort</label>
+          <select id="sort" class="sort">
+            <option value="relevance">Relevance</option>
+            <option value="rating">Rating</option>
+            <option value="eta">Delivery time</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ✅ Keep all 8 restaurants (same as your original) -->
+      <div class="grid" id="restGrid">
+
+        <article class="rest" data-rid="h1" data-name="The Salad Bar" data-rating="4.6" data-eta="27" data-tag="highprotein" data-cuisines="Salads • Protein">
+          <div class="rest-img"><img src="salad.avif" alt="The Salad Bar"></div>
+          <div class="rest-body">
+            <p class="rest-name">The Salad Bar</p>
+            <div class="rest-meta">
+              <span class="star">4.6★</span><span>27 mins</span><span>•</span><span>Salads • Protein</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h1m1" data-cat="Salads" data-name="Greek Salad" data-desc="Fresh veggies + feta style." data-price="189" data-offer="10"></div>
+            <div class="mi" data-itemid="h1m2" data-cat="Protein" data-name="Protein Bowl" data-desc="Paneer + beans + greens." data-price="219" data-offer="12"></div>
+            <div class="mi" data-itemid="h1m3" data-cat="Wraps" data-name="Veg Wrap" data-desc="Light wrap with sauces." data-price="149" data-offer="0"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h2" data-name="Keto Kitchen" data-rating="4.5" data-eta="30" data-tag="keto" data-cuisines="Keto • Low Carb">
+          <div class="rest-img"><img src="keto.avif" alt="Keto Kitchen"></div>
+          <div class="rest-body">
+            <p class="rest-name">Keto Kitchen</p>
+            <div class="rest-meta">
+              <span class="star">4.5★</span><span>30 mins</span><span>•</span><span>Keto • Low Carb</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h2m1" data-cat="Keto" data-name="Keto Paneer Bowl" data-desc="Low carb paneer + veggies." data-price="249" data-offer="10"></div>
+            <div class="mi" data-itemid="h2m2" data-cat="Keto" data-name="Zoodle Salad" data-desc="Zucchini noodles + dressing." data-price="199" data-offer="8"></div>
+            <div class="mi" data-itemid="h2m3" data-cat="Drinks" data-name="Detox Water" data-desc="Lemon + cucumber." data-price="79" data-offer="0"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h3" data-name="Fit Bowls Co." data-rating="4.4" data-eta="28" data-tag="highprotein" data-cuisines="Bowls • Healthy">
+          <div class="rest-img"><img src="fit.avif" alt="Fit Bowls Co."></div>
+          <div class="rest-body">
+            <p class="rest-name">Fit Bowls Co.</p>
+            <div class="rest-meta">
+              <span class="star">4.4★</span><span>28 mins</span><span>•</span><span>Bowls • Healthy</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h3m1" data-cat="Bowls" data-name="Brown Rice Bowl" data-desc="Dal + rice + veggies." data-price="189" data-offer="10"></div>
+            <div class="mi" data-itemid="h3m2" data-cat="Bowls" data-name="Quinoa Veg Bowl" data-desc="Quinoa + beans + greens." data-price="239" data-offer="12"></div>
+            <div class="mi" data-itemid="h3m3" data-cat="Protein" data-name="Sprouts Power Bowl" data-desc="Sprouts + corn + salad." data-price="179" data-offer="8"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h4" data-name="Smoothie Studio" data-rating="4.3" data-eta="25" data-tag="under200" data-cuisines="Smoothies • Drinks">
+          <div class="rest-img"><img src="smoothie.avif" alt="Smoothie Studio"></div>
+          <div class="rest-body">
+            <p class="rest-name">Smoothie Studio</p>
+            <div class="rest-meta">
+              <span class="star">4.3★</span><span>25 mins</span><span>•</span><span>Smoothies • Drinks</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h4m1" data-cat="Smoothies" data-name="Banana Oats Shake" data-desc="Energy smoothie." data-price="149" data-offer="10"></div>
+            <div class="mi" data-itemid="h4m2" data-cat="Smoothies" data-name="Berry Blast" data-desc="Mixed berries smoothie." data-price="179" data-offer="0"></div>
+            <div class="mi" data-itemid="h4m3" data-cat="Juices" data-name="Orange Juice" data-desc="Fresh juice." data-price="129" data-offer="8"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h5" data-name="Low Oil Meals" data-rating="4.2" data-eta="32" data-tag="under200" data-cuisines="Low Oil • Home Style">
+          <div class="rest-img"><img src="lowoil.avif" alt="Low Oil Meals"></div>
+          <div class="rest-body">
+            <p class="rest-name">Low Oil Meals</p>
+            <div class="rest-meta">
+              <span class="star">4.2★</span><span>32 mins</span><span>•</span><span>Low Oil • Home Style</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h5m1" data-cat="Meals" data-name="Dal + Brown Rice" data-desc="Low oil comfort meal." data-price="179" data-offer="10"></div>
+            <div class="mi" data-itemid="h5m2" data-cat="Meals" data-name="Seasonal Sabzi + Roti" data-desc="Light meal." data-price="159" data-offer="8"></div>
+            <div class="mi" data-itemid="h5m3" data-cat="Salads" data-name="Cucumber Salad" data-desc="Fresh and light." data-price="79" data-offer="0"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h6" data-name="Protein Planet" data-rating="4.6" data-eta="35" data-tag="highprotein" data-cuisines="Protein • Bowls">
+          <div class="rest-img"><img src="protein.avif" alt="Protein Planet"></div>
+          <div class="rest-body">
+            <p class="rest-name">Protein Planet</p>
+            <div class="rest-meta">
+              <span class="star">4.6★</span><span>35 mins</span><span>•</span><span>Protein • Bowls</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h6m1" data-cat="Protein" data-name="Paneer Protein Box" data-desc="Paneer + beans + veggies." data-price="259" data-offer="12"></div>
+            <div class="mi" data-itemid="h6m2" data-cat="Protein" data-name="Tofu Salad Bowl" data-desc="Tofu + greens + sauce." data-price="239" data-offer="10"></div>
+            <div class="mi" data-itemid="h6m3" data-cat="Snacks" data-name="Roasted Makhana" data-desc="Healthy snack." data-price="99" data-offer="0"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h7" data-name="Keto & Clean" data-rating="4.4" data-eta="29" data-tag="keto" data-cuisines="Keto • Clean Eating">
+          <div class="rest-img"><img src="ketoclean.avif" alt="Keto & Clean"></div>
+          <div class="rest-body">
+            <p class="rest-name">Keto & Clean</p>
+            <div class="rest-meta">
+              <span class="star">4.4★</span><span>29 mins</span><span>•</span><span>Keto • Clean Eating</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h7m1" data-cat="Keto" data-name="Keto Veg Platter" data-desc="Low carb veg platter." data-price="229" data-offer="10"></div>
+            <div class="mi" data-itemid="h7m2" data-cat="Keto" data-name="Avocado Salad" data-desc="Creamy healthy fats." data-price="249" data-offer="12"></div>
+            <div class="mi" data-itemid="h7m3" data-cat="Drinks" data-name="Green Tea" data-desc="Light & fresh." data-price="69" data-offer="0"></div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="h8" data-name="Fresh Greens" data-rating="4.1" data-eta="26" data-tag="under200" data-cuisines="Salads • Wraps">
+          <div class="rest-img"><img src="freshgreen.avif" alt="Fresh Greens"></div>
+          <div class="rest-body">
+            <p class="rest-name">Fresh Greens</p>
+            <div class="rest-meta">
+              <span class="star">4.1★</span><span>26 mins</span><span>•</span><span>Salads • Wraps</span>
+            </div>
+          </div>
+          <div class="menu-data" hidden>
+            <div class="mi" data-itemid="h8m1" data-cat="Salads" data-name="Sprouts Salad" data-desc="High fiber salad bowl." data-price="149" data-offer="10"></div>
+            <div class="mi" data-itemid="h8m2" data-cat="Wraps" data-name="Hummus Veg Wrap" data-desc="Wrap with hummus." data-price="179" data-offer="8"></div>
+            <div class="mi" data-itemid="h8m3" data-cat="Snacks" data-name="Fruit Bowl" data-desc="Seasonal fruits." data-price="129" data-offer="0"></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="menuCard">
+        <div class="menuHead">
+          <div>
+            <h3 id="menuTitle">Select a restaurant</h3>
+            <p id="menuMeta">Click any restaurant card to view its menu.</p>
+          </div>
+          <span class="menuPill" id="menuPill">HEALTHY</span>
+        </div>
+
+        <div class="menuCats" id="menuCats"></div>
+        <div class="menuList" id="menuList" data-active-rid=""></div>
+      </div>
+
+      <div class="cartCard" id="cart">
+        <div class="cartTop">
+          <h3>Your Cart</h3>
+          <button class="linkBtn" id="clearCart">Clear</button>
+        </div>
+
+        <div class="cartList" id="cartList"></div>
+
+        <div class="cartBottom">
+          <span>Total</span>
+          <strong id="cartTotal">₹0</strong>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <span>© <span id="year"></span> FoodHub</span>
+      <span class="muted">Healthy section</span>
+    </div>
+  </footer>
+
+  <script src="healthy.js"></script>
+</body>
+</html>

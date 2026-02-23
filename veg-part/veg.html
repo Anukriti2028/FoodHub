@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHub • Veg</title>
+  <link rel="stylesheet" href="veg.css" />
+</head>
+<body>
+  <header class="topbar">
+  <div class="wrap topbar-inner">
+    <!-- LEFT -->
+    <a class="brand" href="../home-page/index.html" aria-label="FoodHub Home">
+      <span class="brand-text">FoodHub</span>
+    </a>
+
+    <!-- LOCATION -->
+    <button class="loc" id="locBtn" title="Location">
+      <span class="loc-dot"></span>
+      <span class="loc-text">
+        <span class="loc-title">Deliver to</span>
+        <span class="loc-place" id="locPlace">Muradnagar</span>
+      </span>
+      <span class="loc-caret">▾</span>
+    </button>
+
+    <!-- SEARCH -->
+    <div class="search bigSearch">
+      <span class="sIcon">⌕</span>
+      <input id="search" type="text" placeholder="Search for restaurants or dishes" />
+    </div>
+
+    <!-- RIGHT NAV -->
+    <nav class="rightNav" aria-label="Primary">
+      <a class="navItem active" href="../veg-part/veg.html">Veg</a>
+      <a class="navItem" href="../nonveg-part/nonveg.html">Non-Veg</a>
+      <a class="navItem" href="../healthy-part/healthy.html">Healthy</a>
+
+      <a class="navItem cartBtn" href="../cart-part/cart.html">
+        Cart <span class="cartCount" id="cartCount">0</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-left">
+        <h1>Vegetarian Restaurants</h1>
+        <p>Discover veg places and their menus.</p>
+      </div>
+
+      <div class="chips" role="group" aria-label="Quick filters">
+        <button class="chip active" data-chip="all">All</button>
+        <button class="chip" data-chip="pureveg">Pure Veg</button>
+        <button class="chip" data-chip="under150">Under ₹150</button>
+        <button class="chip" data-chip="under30">30 mins</button>
+        <button class="chip" data-chip="rating45">4.5+</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap layout">
+    <section class="left">
+      <div class="section-top">
+        <h2 class="h2">Restaurants</h2>
+        <div class="sortWrap">
+          <label for="sort" class="sortLabel">Sort</label>
+          <select id="sort" class="sort">
+            <option value="relevance">Relevance</option>
+            <option value="rating">Rating</option>
+            <option value="eta">Delivery time</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid" id="restGrid">
+        <article class="rest" data-rid="r1" data-name="Green Leaf Kitchen" data-rating="4.6" data-eta="28" data-pureveg="true" data-cuisines="North Indian • Thali">
+          <div class="rest-img"><img src="greenleaf.avif" alt="Green Leaf Kitchen"></div>
+          <div class="rest-body">
+            <p class="rest-name">Green Leaf Kitchen</p>
+            <div class="rest-meta">
+              <span class="star">4.6★</span><span>28 mins</span><span>•</span><span>North Indian • Thali</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r2" data-name="Paneer Palace" data-rating="4.4" data-eta="32" data-pureveg="true" data-cuisines="Paneer • Gravy">
+          <div class="rest-img"><img src="paneerplace.avif" alt="Paneer Palace"></div>
+          <div class="rest-body">
+            <p class="rest-name">Paneer Palace</p>
+            <div class="rest-meta">
+              <span class="star">4.4★</span><span>32 mins</span><span>•</span><span>Paneer • Gravy</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r3" data-name="Dosa Corner" data-rating="4.5" data-eta="25" data-pureveg="true" data-cuisines="South Indian • Dosa">
+          <div class="rest-img"><img src="dosa.avif" alt="Dosa Corner"></div>
+          <div class="rest-body">
+            <p class="rest-name">Dosa Corner</p>
+            <div class="rest-meta">
+              <span class="star">4.5★</span><span>25 mins</span><span>•</span><span>South Indian • Dosa</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r4" data-name="Sattvik Bhojan" data-rating="4.3" data-eta="29" data-pureveg="true" data-cuisines="Satvik • Home Style">
+          <div class="rest-img"><img src="satwik bhojan.avif" alt="Sattvik Bhojan"></div>
+          <div class="rest-body">
+            <p class="rest-name">Sattvik Bhojan</p>
+            <div class="rest-meta">
+              <span class="star">4.3★</span><span>29 mins</span><span>•</span><span>Satvik • Home Style</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r5" data-name="Veg Bowl Co." data-rating="4.2" data-eta="30" data-pureveg="false" data-cuisines="Bowls • Salads">
+          <div class="rest-img"><img src="vegbowl.webp" alt="Veg Bowl Co."></div>
+          <div class="rest-body">
+            <p class="rest-name">Veg Bowl Co.</p>
+            <div class="rest-meta">
+              <span class="star">4.2★</span><span>30 mins</span><span>•</span><span>Bowls • Salads</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r6" data-name="Tandoori Treats (Veg)" data-rating="4.5" data-eta="34" data-pureveg="true" data-cuisines="Tandoor • Starters">
+          <div class="rest-img"><img src="tandoori.webp" alt="Tandoori Treats"></div>
+          <div class="rest-body">
+            <p class="rest-name">Tandoori Treats (Veg)</p>
+            <div class="rest-meta">
+              <span class="star">4.5★</span><span>34 mins</span><span>•</span><span>Tandoor • Starters</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r7" data-name="The Salad Bar" data-rating="4.6" data-eta="27" data-pureveg="true" data-cuisines="Salads • Healthy">
+          <div class="rest-img"><img src="salad bar.avif" alt="The Salad Bar"></div>
+          <div class="rest-body">
+            <p class="rest-name">The Salad Bar</p>
+            <div class="rest-meta">
+              <span class="star">4.6★</span><span>27 mins</span><span>•</span><span>Salads • Healthy</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="rest" data-rid="r8" data-name="Sweets & Snacks" data-rating="4.1" data-eta="35" data-pureveg="true" data-cuisines="Snacks • Dessert">
+          <div class="rest-img"><img src="sweetssnacks.webp"Sweets & Snacks"></div>
+          <div class="rest-body">
+            <p class="rest-name">Sweets & Snacks</p>
+            <div class="rest-meta">
+              <span class="star">4.1★</span><span>35 mins</span><span>•</span><span>Snacks • Dessert</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div id="menuData" style="display:none;">
+        <div class="menuBlock" data-rid="r1">
+          <div class="mItem" data-id="m1" data-cat="Thali" data-name="Veg Thali" data-desc="Dal, sabzi, roti, rice, salad." data-price="179" data-offer="15"></div>
+          <div class="mItem" data-id="m2" data-cat="Street" data-name="Chole Bhature" data-desc="Spicy chole with fluffy bhature." data-price="149" data-offer="10"></div>
+          <div class="mItem" data-id="m3" data-cat="Rice" data-name="Rajma Chawal" data-desc="Comfort bowl with masala rajma." data-price="139" data-offer="20"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r2">
+          <div class="mItem" data-id="m4" data-cat="Paneer" data-name="Paneer Butter Masala" data-desc="Creamy tomato gravy paneer." data-price="199" data-offer="12"></div>
+          <div class="mItem" data-id="m5" data-cat="Paneer" data-name="Kadai Paneer" data-desc="Kadai masala, capsicum & onion." data-price="189" data-offer="18"></div>
+          <div class="mItem" data-id="m6" data-cat="Starters" data-name="Paneer Tikka" data-desc="Grilled paneer with spices." data-price="219" data-offer="10"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r3">
+          <div class="mItem" data-id="m7" data-cat="Dosa" data-name="Masala Dosa" data-desc="Crispy dosa with potato filling." data-price="129" data-offer="15"></div>
+          <div class="mItem" data-id="m8" data-cat="Idli" data-name="Idli Sambhar" data-desc="Soft idli with sambhar & chutney." data-price="99" data-offer="8"></div>
+          <div class="mItem" data-id="m9" data-cat="Uttapam" data-name="Uttapam" data-desc="Veg loaded uttapam." data-price="119" data-offer="12"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r4">
+          <div class="mItem" data-id="m10" data-cat="Home" data-name="Aloo Jeera + Roti" data-desc="Light home-style meal." data-price="129" data-offer="10"></div>
+          <div class="mItem" data-id="m11" data-cat="Dal" data-name="Dal Tadka + Rice" data-desc="Comfort dal with rice." data-price="149" data-offer="15"></div>
+          <div class="mItem" data-id="m12" data-cat="Sabzi" data-name="Seasonal Sabzi + Roti" data-desc="Daily fresh sabzi." data-price="139" data-offer="12"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r5">
+          <div class="mItem" data-id="m13" data-cat="Bowls" data-name="Veg Protein Bowl" data-desc="Paneer + beans + veggies." data-price="229" data-offer="10"></div>
+          <div class="mItem" data-id="m14" data-cat="Salads" data-name="Sprouts Salad" data-desc="Light & fresh salad bowl." data-price="149" data-offer="20"></div>
+          <div class="mItem" data-id="m15" data-cat="Bowls" data-name="Brown Rice Bowl" data-desc="Dal + rice + veggies." data-price="189" data-offer="15"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r6">
+          <div class="mItem" data-id="m16" data-cat="Starters" data-name="Hara Bhara Kabab" data-desc="Crispy kababs with mint." data-price="159" data-offer="10"></div>
+          <div class="mItem" data-id="m17" data-cat="Starters" data-name="Veg Seekh Kabab" data-desc="Tandoori veg seekh." data-price="169" data-offer="12"></div>
+          <div class="mItem" data-id="m18" data-cat="Main" data-name="Veg Biryani" data-desc="Fragrant biryani with raita." data-price="179" data-offer="18"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r7">
+          <div class="mItem" data-id="m19" data-cat="Salads" data-name="Greek Salad" data-desc="Fresh veggies + feta style." data-price="189" data-offer="10"></div>
+          <div class="mItem" data-id="m20" data-cat="Salads" data-name="Corn & Bean Salad" data-desc="High protein salad bowl." data-price="179" data-offer="12"></div>
+          <div class="mItem" data-id="m21" data-cat="Wraps" data-name="Veg Wrap" data-desc="Light wrap with sauces." data-price="149" data-offer="15"></div>
+        </div>
+
+        <div class="menuBlock" data-rid="r8">
+          <div class="mItem" data-id="m22" data-cat="Snacks" data-name="Samosa (2 pcs)" data-desc="Crispy snack with chutney." data-price="49" data-offer="5"></div>
+          <div class="mItem" data-id="m23" data-cat="Snacks" data-name="Kachori (2 pcs)" data-desc="Spicy kachori with sabzi." data-price="69" data-offer="10"></div>
+          <div class="mItem" data-id="m24" data-cat="Dessert" data-name="Gulab Jamun (2 pcs)" data-desc="Soft sweet dessert." data-price="79" data-offer="8"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="menuCard">
+        <div class="menuHead">
+          <div>
+            <h3 id="menuTitle">Select a restaurant</h3>
+            <p id="menuMeta">Click any restaurant card to view its menu.</p>
+          </div>
+          <span class="menuPill" id="menuPill">VEG</span>
+        </div>
+
+        <div class="menuCats" id="menuCats"></div>
+        <div class="menuList" id="menuList"></div>
+      </div>
+
+      <div class="cartCard" id="cart">
+        <div class="cartTop">
+          <h3>Your Cart</h3>
+          <button class="linkBtn" id="clearCart">Clear</button>
+        </div>
+
+        <div class="cartList" id="cartList"></div>
+
+        <div class="cartBottom">
+          <span>Total</span>
+          <strong id="cartTotal">₹0</strong>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <span>© <span id="year"></span> FoodHub</span>
+      <span class="muted">Veg section</span>
+    </div>
+  </footer>
+
+  <script src="veg.js"></script>
+</body>
+</html>

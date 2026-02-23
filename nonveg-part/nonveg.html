@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHub • Non-Veg</title>
+  <link rel="stylesheet" href="nonveg.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+
+    <a class="brand" href="../home-page/index.html" aria-label="FoodHub Home">
+      <span class="brand-text">FoodHub</span>
+    </a>
+
+    <button class="loc" id="locBtn" title="Location">
+      <span class="loc-dot"></span>
+      <span class="loc-text">
+        <span class="loc-title">Deliver to</span>
+        <span class="loc-place" id="locPlace">Muradnagar</span>
+      </span>
+      <span class="loc-caret">▾</span>
+    </button>
+
+    <div class="search">
+      <span class="sIcon">⌕</span>
+      <input id="search" type="text" placeholder="Search for restaurants or dishes" />
+    </div>
+
+    <nav class="rightNav" aria-label="Primary">
+      <a class="navItem" href="../veg-part/veg.html">Veg</a>
+      <a class="navItem active" href="nonveg.html">Non-Veg</a>
+      <a class="navItem" href="../healthy-part/healthy.html">Healthy</a>
+      <a class="navItem cartBtn" href="../cart-part/cart.html">
+        Cart <span class="cartCount" id="cartCount">0</span>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-left">
+      <h1>Non-Veg Restaurants</h1>
+      <p>Explore top non-veg places and their menus.</p>
+    </div>
+
+    <div class="chips" role="group" aria-label="Quick filters">
+      <button class="chip active" data-chip="all">All</button>
+      <button class="chip" data-chip="biryani">Biryani</button>
+      <button class="chip" data-chip="under30">30 mins</button>
+      <button class="chip" data-chip="rating45">4.5+</button>
+      <button class="chip" data-chip="under200">Under ₹200</button>
+    </div>
+  </div>
+</section>
+
+
+<main class="wrap layout">
+
+  <section class="left">
+    <div class="section-top">
+      <h2 class="h2">Restaurants</h2>
+      <div class="sortWrap">
+        <label for="sort" class="sortLabel">Sort</label>
+        <select id="sort" class="sort">
+          <option value="relevance">Relevance</option>
+          <option value="rating">Rating</option>
+          <option value="eta">Delivery time</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid" id="restGrid">
+
+      <article class="rest"
+        data-rid="n1"
+        data-name="Biryani Junction"
+        data-rating="4.6"
+        data-eta="26"
+        data-tag="biryani"
+        data-cuisines="Biryani • Mughlai">
+        <div class="rest-img"><img src="biryani.avif" alt="Biryani Junction"></div>
+        <div class="rest-body">
+          <p class="rest-name">Biryani Junction</p>
+          <div class="rest-meta">
+            <span class="star">4.6★</span><span>26 mins</span><span>•</span><span>Biryani • Mughlai</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n2"
+        data-name="Kebab & Co."
+        data-rating="4.5"
+        data-eta="34"
+        data-tag="kebab"
+        data-cuisines="Kebabs • Rolls">
+        <div class="rest-img"><img src="kebab.avif" alt="Kebab & Co."></div>
+        <div class="rest-body">
+          <p class="rest-name">Kebab & Co.</p>
+          <div class="rest-meta">
+            <span class="star">4.5★</span><span>34 mins</span><span>•</span><span>Kebabs • Rolls</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n3"
+        data-name="Grill House"
+        data-rating="4.4"
+        data-eta="29"
+        data-tag="grill"
+        data-cuisines="Grill • BBQ">
+        <div class="rest-img"><img src="grill.avif" alt="Grill House"></div>
+        <div class="rest-body">
+          <p class="rest-name">Grill House</p>
+          <div class="rest-meta">
+            <span class="star">4.4★</span><span>29 mins</span><span>•</span><span>Grill • BBQ</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n4"
+        data-name="Fish Fry Point"
+        data-rating="4.2"
+        data-eta="32"
+        data-tag="seafood"
+        data-cuisines="Seafood • Fry">
+        <div class="rest-img"><img src="fishfry.avif" alt="Fish Fry Point"></div>
+        <div class="rest-body">
+          <p class="rest-name">Fish Fry Point</p>
+          <div class="rest-meta">
+            <span class="star">4.2★</span><span>32 mins</span><span>•</span><span>Seafood • Fry</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n5"
+        data-name="Chicken Curry Wala"
+        data-rating="4.3"
+        data-eta="28"
+        data-tag="curry"
+        data-cuisines="Curry • North Indian">
+        <div class="rest-img"><img src="chickencurry.avif" alt="Chicken Curry Wala"></div>
+        <div class="rest-body">
+          <p class="rest-name">Chicken Curry Wala</p>
+          <div class="rest-meta">
+            <span class="star">4.3★</span><span>28 mins</span><span>•</span><span>Curry • North Indian</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n6"
+        data-name="Egg Mania"
+        data-rating="4.1"
+        data-eta="25"
+        data-tag="egg"
+        data-cuisines="Egg • Street">
+        <div class="rest-img"><img src="egg.avif" alt="Egg Mania"></div>
+        <div class="rest-body">
+          <p class="rest-name">Egg Mania</p>
+          <div class="rest-meta">
+            <span class="star">4.1★</span><span>25 mins</span><span>•</span><span>Egg • Street</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n7"
+        data-name="Hyderabadi Spice"
+        data-rating="4.6"
+        data-eta="35"
+        data-tag="biryani"
+        data-cuisines="Hyderabadi • Biryani">
+        <div class="rest-img"><img src="hyderabadi2.avif" alt="Hyderabadi Spice"></div>
+        <div class="rest-body">
+          <p class="rest-name">Hyderabadi Spice</p>
+          <div class="rest-meta">
+            <span class="star">4.6★</span><span>35 mins</span><span>•</span><span>Hyderabadi • Biryani</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="rest"
+        data-rid="n8"
+        data-name="Tandoor Treats"
+        data-rating="4.5"
+        data-eta="31"
+        data-tag="tandoor"
+        data-cuisines="Tandoor • Kebabs">
+        <div class="rest-img"><img src="tandoor.avif" alt="Tandoor Treats"></div>
+        <div class="rest-body">
+          <p class="rest-name">Tandoor Treats</p>
+          <div class="rest-meta">
+            <span class="star">4.5★</span><span>31 mins</span><span>•</span><span>Tandoor • Kebabs</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+
+    <!-- ✅ SAME STRUCTURE AS VEG -->
+    <div id="menuData" style="display:none;">
+
+      <div class="menuBlock" data-rid="n1">
+        <div class="mItem" data-id="n1m1" data-cat="Biryani" data-name="Chicken Biryani" data-desc="Hyderabadi dum biryani." data-price="249" data-offer="10"></div>
+        <div class="mItem" data-id="n1m2" data-cat="Biryani" data-name="Mutton Biryani" data-desc="Slow cooked mutton biryani." data-price="299" data-offer="12"></div>
+        <div class="mItem" data-id="n1m3" data-cat="Starters" data-name="Chicken 65" data-desc="Spicy deep fried chicken." data-price="199" data-offer="8"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n2">
+        <div class="mItem" data-id="n2m1" data-cat="Kebabs" data-name="Chicken Tikka" data-desc="Grilled chicken tikka." data-price="229" data-offer="10"></div>
+        <div class="mItem" data-id="n2m2" data-cat="Kebabs" data-name="Seekh Kebab" data-desc="Juicy chicken seekh." data-price="249" data-offer="15"></div>
+        <div class="mItem" data-id="n2m3" data-cat="Rolls" data-name="Chicken Roll" data-desc="Loaded chicken roll." data-price="149" data-offer="5"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n3">
+        <div class="mItem" data-id="n3m1" data-cat="Grill" data-name="BBQ Chicken" data-desc="Smoky BBQ grilled chicken." data-price="259" data-offer="10"></div>
+        <div class="mItem" data-id="n3m2" data-cat="Grill" data-name="Peri Peri Wings" data-desc="Hot peri peri wings." data-price="219" data-offer="12"></div>
+        <div class="mItem" data-id="n3m3" data-cat="Combos" data-name="Grill Combo" data-desc="Chicken + fries + dip." data-price="299" data-offer="15"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n4">
+        <div class="mItem" data-id="n4m1" data-cat="Seafood" data-name="Fish Fry" data-desc="Crispy masala fish fry." data-price="199" data-offer="10"></div>
+        <div class="mItem" data-id="n4m2" data-cat="Seafood" data-name="Fish Curry" data-desc="Coastal fish curry." data-price="229" data-offer="8"></div>
+        <div class="mItem" data-id="n4m3" data-cat="Starters" data-name="Prawns Fry" data-desc="Spicy prawns fry." data-price="279" data-offer="12"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n5">
+        <div class="mItem" data-id="n5m1" data-cat="Curry" data-name="Butter Chicken" data-desc="Creamy butter chicken." data-price="249" data-offer="10"></div>
+        <div class="mItem" data-id="n5m2" data-cat="Curry" data-name="Chicken Curry" data-desc="Desi style curry." data-price="229" data-offer="8"></div>
+        <div class="mItem" data-id="n5m3" data-cat="Breads" data-name="Butter Naan" data-desc="Soft butter naan." data-price="49" data-offer="0"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n6">
+        <div class="mItem" data-id="n6m1" data-cat="Egg" data-name="Egg Roll" data-desc="Street style egg roll." data-price="99" data-offer="10"></div>
+        <div class="mItem" data-id="n6m2" data-cat="Egg" data-name="Egg Curry" data-desc="Egg curry + gravy." data-price="149" data-offer="8"></div>
+        <div class="mItem" data-id="n6m3" data-cat="Egg" data-name="Anda Bhurji" data-desc="Spicy bhurji." data-price="129" data-offer="12"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n7">
+        <div class="mItem" data-id="n7m1" data-cat="Biryani" data-name="Hyderabadi Chicken Biryani" data-desc="Hyderabadi dum style." data-price="269" data-offer="10"></div>
+        <div class="mItem" data-id="n7m2" data-cat="Starters" data-name="Chicken Lollipop" data-desc="Crispy lollipop." data-price="229" data-offer="12"></div>
+        <div class="mItem" data-id="n7m3" data-cat="Kebabs" data-name="Chicken Tikka" data-desc="Tikka with mint dip." data-price="239" data-offer="8"></div>
+      </div>
+
+      <div class="menuBlock" data-rid="n8">
+        <div class="mItem" data-id="n8m1" data-cat="Tandoor" data-name="Chicken Tikka" data-desc="Tikka with mint dip." data-price="229" data-offer="10"></div>
+        <div class="mItem" data-id="n8m2" data-cat="Tandoor" data-name="Afghani Chicken" data-desc="Creamy afghani style." data-price="269" data-offer="12"></div>
+        <div class="mItem" data-id="n8m3" data-cat="Breads" data-name="Butter Naan" data-desc="Soft naan." data-price="49" data-offer="0"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <aside class="right">
+
+    <div class="menuCard">
+      <div class="menuHead">
+        <div>
+          <h3 id="menuTitle">Select a restaurant</h3>
+          <p id="menuMeta">Click any restaurant card to view its menu.</p>
+        </div>
+        <span class="menuPill" id="menuPill">NON-VEG</span>
+      </div>
+
+      <div class="menuCats" id="menuCats"></div>
+      <div class="menuList" id="menuList"></div>
+    </div>
+
+    <div class="cartCard" id="cart">
+      <div class="cartTop">
+        <h3>Your Cart</h3>
+        <button class="linkBtn" id="clearCart">Clear</button>
+      </div>
+
+      <div class="cartList" id="cartList"></div>
+
+      <div class="cartBottom">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+    </div>
+
+  </aside>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <span>© <span id="year"></span> FoodHub</span>
+    <span class="muted">Non-Veg section</span>
+  </div>
+</footer>
+
+<script src="nonveg.js"></script>
+</body>
+</html>

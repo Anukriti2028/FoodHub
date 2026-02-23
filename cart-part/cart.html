@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodHub • Cart</title>
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+
+  <!-- NAVBAR (same theme, no search, no location) -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="../home-page/index.html" aria-label="FoodHub Home">
+        <span class="brand-text">FoodHub</span>
+      </a>
+
+      <nav class="rightNav" aria-label="Primary">
+        <a class="navItem" href="../veg-part/veg.html">Veg</a>
+        <a class="navItem" href="../nonveg-part/nonveg.html">Non-Veg</a>
+        <a class="navItem" href="../healthy-part/healthy.html">Healthy</a>
+
+        <a class="navItem cartBtn active" href="../cart-part/cart.html">
+          Cart <span class="cartCount" id="navCartCount">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE -->
+  <main class="wrap page">
+    <section class="cartLeft">
+      <div class="pageHead">
+        <h1>Your Cart</h1>
+        <p class="muted">Review items, change quantity, then pay securely.</p>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div class="card emptyCard" id="emptyState" hidden>
+        <div class="emptyInner">
+          <div class="emptyIcon" aria-hidden="true">🛒</div>
+          <div>
+            <h3>Cart is empty</h3>
+            <p class="muted">Add items from Veg / Non-Veg / Healthy and come back here.</p>
+            <div class="emptyActions">
+              <a class="btn primary" href="../veg-part/veg.html">Browse Veg</a>
+              <a class="btn ghost" href="../nonveg-part/nonveg.html">Browse Non-Veg</a>
+              <a class="btn ghost" href="../healthy-part/healthy.html">Browse Healthy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="card itemsCard" id="itemsCard">
+        <div class="itemsTop">
+          <h3>Items</h3>
+          <button class="linkBtn danger" id="clearCartBtn" type="button">Clear cart</button>
+        </div>
+
+        <div class="itemsList" id="itemsList"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT SUMMARY -->
+    <aside class="cartRight">
+      <div class="card billCard">
+        <h3>Bill Summary</h3>
+
+        <div class="billRows">
+          <div class="row">
+            <span class="muted">Items total</span>
+            <strong id="itemsTotal">₹0</strong>
+          </div>
+          <div class="row">
+            <span class="muted">Delivery fee</span>
+            <strong id="deliveryFee">₹0</strong>
+          </div>
+          <div class="row">
+            <span class="muted">Platform fee</span>
+            <strong id="platformFee">₹0</strong>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row grand">
+          <span>Grand total</span>
+          <strong id="grandTotal">₹0</strong>
+        </div>
+
+        <button class="payBtn" id="proceedBtn" type="button">
+          Proceed to Pay
+        </button>
+
+        <p class="tiny muted" id="hintText">Add at least 1 item to checkout.</p>
+      </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="modalTop">
+        <strong id="checkoutTitle">Checkout</strong>
+        <button class="xBtn" id="closeCheckout" type="button">✕</button>
+      </div>
+
+      <div class="modalBody">
+        <div class="formGrid">
+          <div class="field">
+            <label for="custName">Name</label>
+            <input id="custName" type="text" placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="custPhone">Phone</label>
+            <input id="custPhone" type="tel" placeholder="10-digit mobile number" />
+          </div>
+
+          <div class="field full">
+            <label for="custAddress">Delivery address</label>
+            <textarea id="custAddress" rows="3" placeholder="House no, street, area, city"></textarea>
+          </div>
+
+          <div class="field full">
+            <label>Payment method</label>
+            <div class="payMethods" id="payMethods">
+              <button class="pm active" type="button" data-method="upi">UPI</button>
+              <button class="pm" type="button" data-method="card">Card</button>
+              <button class="pm" type="button" data-method="cod">Cash on Delivery</button>
+            </div>
+          </div>
+
+          <div class="field full" id="upiBox">
+            <label for="upiId">UPI ID</label>
+            <input id="upiId" type="text" placeholder="example@upi" />
+          </div>
+
+          <div class="field full" id="cardBox" hidden>
+            <div class="cardGrid">
+              <div class="field">
+                <label for="cardNo">Card number</label>
+                <input id="cardNo" type="text" placeholder="1234 5678 9012 3456" />
+              </div>
+              <div class="field">
+                <label for="cardName">Name on card</label>
+                <input id="cardName" type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="cardExp">Expiry</label>
+                <input id="cardExp" type="text" placeholder="MM/YY" />
+              </div>
+              <div class="field">
+                <label for="cardCvv">CVV</label>
+                <input id="cardCvv" type="password" placeholder="***" />
+              </div>
+            </div>
+          </div>
+
+          <div class="summaryStrip">
+            <span class="muted">Payable</span>
+            <strong id="modalGrand">₹0</strong>
+          </div>
+
+          <button class="payNow" id="payNowBtn" type="button">
+            Pay Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="successModal" aria-hidden="true">
+    <div class="modalCard successCard" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <div class="successIcon">✅</div>
+      <h3 id="successTitle">Order Successful</h3>
+      <p class="muted" id="successText">Your order has been placed successfully.</p>
+
+      <div class="successActions">
+        <a class="btn primary" href="../veg-part/veg.html">Order More</a>
+        <button class="btn ghost" id="closeSuccess" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
